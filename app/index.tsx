@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ActivityIndicator, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import * as Location from 'expo-location';
 
 const Home: React.FC = () => {
   const router = useRouter();
+ 
+
+
+  
 
   const handleEmergencyPress = async () => {
     try {
@@ -32,8 +36,11 @@ const Home: React.FC = () => {
     <View style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
-        <Image style={styles.logo} source={require('../assets/images/react-logo.png')} />
-        <Text style={styles.headerText}>SORA+</Text>
+        <Image
+          style={styles.logo}
+          source={require('../assets/images/react-logo.png')}  // Optional: replace with your logo
+        />
+        <Text style={styles.headerText}>SORA</Text>
       </View>
 
       {/* Button Container */}
@@ -49,7 +56,7 @@ const Home: React.FC = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.button, styles.yellowButton]}
-          onPress={() => router.push('/map')}
+          onPress={() => router.push('./map')}
         >
           <Text style={styles.buttonText}>Safe Maps</Text>
         </TouchableOpacity>
@@ -60,8 +67,8 @@ const Home: React.FC = () => {
         <TouchableOpacity>
           <Image style={styles.icon} source={require('../assets/images/settings.png')} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => router.push('/map')}>
-          <Image style={styles.icon} source={require('../assets/images/plus.png')} />
+        <TouchableOpacity onPress={() => router.push('./report')}>
+          <Image style={[styles.icon , { tintColor: '#e74c3c' }]} source={require('../assets/images/flag.png')} />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image style={styles.icon} source={require('../assets/images/user.png')} />
@@ -76,24 +83,27 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#141f25',
     justifyContent: 'space-between',
+    
   },
   header: {
-    height: 80,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f3f3f3',
-    flexDirection: 'row',
+    height: 40,                  
+    justifyContent: 'center',             
+    alignItems: 'center',                 
+    backgroundColor: '#2C3A47',         
+    flexDirection: 'row'  
   },
   logo: {
-    width: 50,
-    height: 50,
-    marginRight: 10,
+    width: 25,
+    height: 25,
+    marginRight: 10,                     // Space between logo and text
   },
   headerText: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#ecf0f1',
+    
   },
   buttonContainer: {
     flex: 1,
@@ -107,27 +117,32 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 15,
+    
+    
   },
   redButton: {
-    backgroundColor: '#e53935',
+    backgroundColor: '#e74c3c',
+   
   },
   yellowButton: {
-    backgroundColor: '#fbc02d',
+    backgroundColor: '#2ecc71',
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 24,
+    color: '#ecf0f1',
+    fontSize: 32,
     fontWeight: 'bold',
+   
   },
   navBar: {
     height: 80,
-    backgroundColor: 'gray',
+    backgroundColor: '#2C3A47',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
   icon: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
+    tintColor: '#ecf0f1',
   },
 });

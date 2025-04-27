@@ -20,6 +20,11 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBGpAZJoCkzjpSToJSVMkrUxqmbjp9gxHg"
+        }
+      },
       "package": "com.anonymous.SORA"
     },
     "web": {
@@ -38,6 +43,8 @@
           "backgroundColor": "#ffffff"
         }
       ]
+
+      
     ],
     "experiments": {
       "typedRoutes": true
