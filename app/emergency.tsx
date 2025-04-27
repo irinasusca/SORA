@@ -113,6 +113,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 5,
     color: '#d32f2f',
+    width:'85%',
+    textAlign: 'center',
   },
   stopButton: {
     width: 200,
@@ -130,7 +132,7 @@ const styles = StyleSheet.create({
   },
   stopText: {
     color: '#fff',
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: 'bold',
   },
 });

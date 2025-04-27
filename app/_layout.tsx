@@ -3,7 +3,7 @@ import { VideoRecordingProvider } from './VideoRecordingContext'; // adjust the 
 
 export default function Layout() {
   return (
-      <VideoRecordingProvider>  {/* Wrap both the providers here */}
+      <VideoRecordingProvider>  
         <Slot />
       </VideoRecordingProvider>
   );
