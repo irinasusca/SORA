@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 
       // Navigate to emergency page
       console.log('Navigating to Emergency...');
-      router.push('/emergency');
+      router.push('./emergency');
     } catch (error) {
       console.error('Emergency Error:', error);
       Alert.alert('Error', 'An error occurred while handling the emergency.');
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
           style={[styles.button, styles.redButton]}
           onPress={async () => {
             await handleEmergencyPress();
-            router.push('/emergency');
+            router.push('./emergency');
           }}
         >
           <Text style={styles.buttonText}>Emergency</Text>
